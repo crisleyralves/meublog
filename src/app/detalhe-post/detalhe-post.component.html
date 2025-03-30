@@ -1,0 +1,12 @@
+<div *ngIf="post">
+    <h2>{{ post.titulo }}</h2>
+    <p>{{ post.conteudo }}</p>
+    <h3>Comentários</h3>
+    <ul>
+        <li *ngFor="let comentario of post.comentarios">{{ comentario }}</li>
+    </ul>
+ <app-formulario-comentario [postId]="post.id"></app-formulario-comentario>
+</div>
+<div *ngIf="!post">
+    <p>Post não encontrado.</p>
+</div>
